@@ -1,11 +1,3 @@
--- insert into users
--- (username, password)
--- values(
--- ${username},
--- ${hash}
--- )returning *;
-
-
 
 insert into user_profile 
 (

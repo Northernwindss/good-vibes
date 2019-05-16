@@ -39,8 +39,6 @@ export default class CreateProfile extends Component {
       />
     </>
   }
-
-
 }
 
 
@@ -51,5 +49,5 @@ const mapDispatchToProps = {
   updateProfileBio
 }
 
-export default connect(mapDispatchToProps)(withRouter(CreateProfile))
+export default connect(null, mapDispatchToProps)(withRouter(CreateProfile))
 

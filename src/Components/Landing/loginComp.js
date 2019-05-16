@@ -28,9 +28,15 @@ class LoginComp extends Component {
     e.preventDefault()
     const { loginUsername, loginPassword } = this.state
     try {
-      const res = await axios.post(`/auth/login`, { loginUsername, loginPassword })
+      const res = await axios.post(`/auth/login`,
+        {
+          loginUsername,
+          loginPassword
+        })
+      console.log('trouble shooting login', res.data)
       this.props.updateUsername(loginUsername)
       this.props.updateUserId(res.data.user_id)
+      // figure out why i can't get props on here when i log in -----with david
       console.log(659849684, this.props)
       this.props.history.push(`/profile/${this.props.user_id}`)
     } catch (err) {
@@ -102,11 +108,6 @@ class LoginComp extends Component {
           />
         </form> */}
 
-
-
-
-
-
         {this.state.loginError && <h3>{this.state.loginErrorMessage}</h3>}
       </>
     )
@@ -116,8 +117,7 @@ class LoginComp extends Component {
 const mapStateToProps = (reduxState) => {
   console.log(22222222222, reduxState)
   return {
-    user_id:
-      reduxState.user_id,
+    user_id: reduxState.user_id,
     profilePicture: reduxState.profilePicture,
     profileName: reduxState.profileName,
     profileBio: reduxState.profileBio,

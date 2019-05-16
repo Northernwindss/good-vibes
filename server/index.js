@@ -6,6 +6,7 @@ const session = require('express-session')
 const { SESSION_SECRET, SERVER_PORT, CONNECTION_STRING } = process.env
 const ctrl = require('./controller')
 const pctrl = require('./profileController')
+const fctrl = require('./fourmsController')
 
 app.use(express.json())
 app.use(
@@ -18,6 +19,7 @@ app.use(
     }
   })
 )
+// make a get request that gets all the axios stuff on all the pages that you need it comp did mount saves it to state or the places that might need it "get user info end point"
 
 massive(CONNECTION_STRING).then((database) => {
   app.set('db', database)
@@ -26,11 +28,19 @@ massive(CONNECTION_STRING).then((database) => {
     console.log(`breathe in breathe out ${SERVER_PORT}`)
   )
 })
-
+// loggin controllers
 app.get('/api/users', ctrl.getUsers)
 app.post('/auth/register', ctrl.register)
 app.post('/auth/login', ctrl.login)
 
-
+// profile controllers
 app.get(`/profile/:id`, pctrl.profile)
-app.post(`/profile/:id`, pctrl.updateUserProfile)
+app.put(`/profile/:id`, pctrl.updateProfileInfo)
+// app.put(`/profile/:id`, pctrl.deleteProfileInfo)
+
+// forum controllers
+app.get(`/forums/:id`, fctrl.forumGetAllThreads)
+app.post(`/forums/:id`, fctrl.forumCreateThread)
+
+
+

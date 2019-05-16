@@ -14,7 +14,7 @@
 -- profile_bio
 -- )values(
 -- ${profile_id},
--- 'https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29441_1454837328981_5612590_n.jpg?_nc_cat=107&_nc_ht=scontent-lax3-2.xx&oh=791e0659ded6990a5c45b027fce25ed6&oe=5D6BD214',
+'https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29441_1454837328981_5612590_n.jpg?_nc_cat=107&_nc_ht=scontent-lax3-2.xx&oh=791e0659ded6990a5c45b027fce25ed6&oe=5D6BD214',
 -- 'Colton Freeze',
 -- ' stuff and things about the coolest person ever in the wholeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee world.'
 -- )
@@ -51,4 +51,23 @@
 -- 'https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/22528307_10212754582033454_3297098877250745852_n.jpg?_nc_cat=110&_nc_ht=scontent-lax3-2.xx&oh=c927b2a2364e2afd97b964a9ccb50f84&oe=5D2E7F5F',
 -- 'Xan Ostler',
 -- 'Break Coltons site'
+-- )
+
+
+-- UPDATE user_profile
+-- set
+-- profile_picture= 'https://awoiaf.westeros.org/images/thumb/a/a0/Cristi_Balanescu_Jon_SnowGhost.png/300px-Cristi_Balanescu_Jon_SnowGhost.png',
+-- profile_name = 'jon snow king in the North',
+-- profile_bio = 'a really cool dude'
+-- where profile_id = 3
+
+
+
+-- -- fourms sql
+
+-- create table fourm_index(
+-- comment_id serial primary key,
+-- thread_id varchar,
+-- user_forum_name varchar,
+-- comment text
 -- )
