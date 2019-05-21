@@ -8,6 +8,7 @@ const ctrl = require('./controller')
 const pctrl = require('./profileController')
 const fctrl = require('./fourmsController')
 
+
 app.use(express.json())
 app.use(
   session({
@@ -19,6 +20,7 @@ app.use(
     }
   })
 )
+app.use(express.static(`${__dirname}/../build`));
 // make a get request that gets all the axios stuff on all the pages that you need it comp did mount saves it to state or the places that might need it "get user info end point"
 
 massive(CONNECTION_STRING).then((database) => {
@@ -47,6 +49,7 @@ app.delete(`/forums/:id`, fctrl.forumDeleteThreadComment)
 // app.get(`/forums/:id`, (req, res) => {
 //   res.send(req.body)
 // })
+
 
 
 
