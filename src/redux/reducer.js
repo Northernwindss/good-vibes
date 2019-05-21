@@ -4,6 +4,7 @@ const initialState = {
   username: '',
   authenticated: false,
 
+
   profilePicture: '',
   profileName: '',
   profileBio: '',

@@ -14,6 +14,7 @@ class CreateThread extends Component {
       thread_id: 0,
       user_forum_name: '',
       comment: '',
+      creator_id: ''
 
       // users_id figure out later
     }
@@ -40,7 +41,8 @@ class CreateThread extends Component {
           placeholder='Create new thread here'
           onChange={(e) => this.setState({
             comment: e.target.value,
-            comment_id: e.target.value
+            comment_id: e.target.value,
+            creator_id: e.target.value
 
           })}
           subject=''

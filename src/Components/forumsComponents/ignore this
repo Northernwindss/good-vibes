@@ -32,13 +32,12 @@ class ForumsMain extends Component {
 
 
   createThread = (newComment) => {
-    axios.post(`/forums/:id/?`, { comment: newComment, creator_id: this.props.creator_id }).then(res => {
+    axios.post(`/forums/:id/?`, { comment: newComment }).then(res => {
       console.log('createthread @ setstate', res.data)
       this.setState({
         // something here:res.data
         comment: res.data,
-        comment_id: res.data,
-        creator_id: res.data
+        comment_id: res.data
       })
     }).catch(error => console.log('createthread @ main', error))
   }
@@ -46,12 +45,12 @@ class ForumsMain extends Component {
   editThread = (forumEditClick) => {
     axios.put(`/forums/${this.props.comment_id}`, {
       comment_id: this.props.comment_id,
-      creator_id: this.props.creator_id,
+      // thread_id: this.props.thread_id,
+      // user_forum_name: this.props.user_forum_name,
       comment: this.props.comment
     }).then(res => {
       this.setState({
-        comment: res.data,
-        creator_id: res.data
+        comment: res.data
       })
     })
     // console.log('editThread @ forumMain', res.data)
@@ -78,33 +77,40 @@ class ForumsMain extends Component {
     console.log('render @ forumMain', this.state.threads)
     return (
       <>
-        {/* <h1>Forums</h1>
+        <h1>Forums</h1>
         <p> Please allow a polite discourse on all the topics
-        </p> */}
+        </p>
 
-        {/* <nav> */}
-        {/* <Link to='/forums/best-starburst-flavor'>Best Starbust Flavor</Link>
-          <Link to='/forums/best-travel-destinations'>Best Travel Destinations</Link>
-          <Link to='/forums/DevMountain-is-awesome'>DevMountain is Awesome!</Link>
+        <nav>
 
+          {/* <h1> */}
           <Switch>
-            <Route
-              path='/forums/best-starburst-flavor'
-              component={Thread}
+
+
+
+
+
+            <Route path='/middle-eastern-genocide'
+      
             />
-            <Route
-              path='/forums/best-travel-destinations'
-              component={Thread}
-            />
-            <Route
-              path='/forums/DevMountain-is-awesome'
-              component={Thread}
-            />
+            <Link to='/middle-eastern-genocide'>Middle Eastern Genocide
+            {/* <Thread /> */}
+            </Link>
+            {/* </h1> */}
+
+            {/* <h1> */}
+            <Route path='/anti-vaxing' />
+            <Link to='/anti-vaxing'>Truth About Vaccines</Link>
+            {/* </h1> */}
+
+            {/* <h1> */}
+            <Route path='/Trump' />
+            <Link to='/best-president-ever'>President Trump Miracle in the Making</Link>
+            {/* </h1> */}
           </Switch>
 
-
         </nav>
- */}
+
 
 
 
@@ -126,8 +132,7 @@ class ForumsMain extends Component {
             .map(comment => {
               return (
                 <span>
-                  {comment.user_id}
-                  {comment.user_forum_name}
+
                   {comment.comment}
                   <Thread
                     thread={comment}
@@ -155,8 +160,7 @@ const mapStateToProps = (reduxState) => {
     comment_id: reduxState.comment_id,
     thread_id: reduxState.thread_id,
     user_forum_name: reduxState.user_forum_name,
-    comment: reduxState.comment,
-    creator_id: reduxState.user_id
+    comment: reduxState.comment
   }
 }
 
@@ -164,7 +168,7 @@ export default connect(mapStateToProps, { updateComment, updateCommentId, update
 
 
 
-        // every comment should have a thread id then when we map thru we need to render over every comment that matches the thread id map over comments and filter them
+// every comment should have a thread id then when we map thru we need to render over every comment that matches the thread id map over comments and filter them
 
 
 
@@ -176,7 +180,7 @@ export default connect(mapStateToProps, { updateComment, updateCommentId, update
 
 
 
-        // export default Forums
+// export default Forums
 
 
 

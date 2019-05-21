@@ -1,0 +1,49 @@
+// .NabBar{
+//   background-color: grey
+// }
+// body{
+//   background-color: black
+// }
+.NavBar{
+  display: flex;
+  justify-content: space-between;
+  // flex: space-between;
+  background-color: #50507c;
+  height: 2em;
+  color:whitesmoke;
+  font-size: 20px;
+  // position: fixed;
+}
+
+.Nav-Links{
+  display: flex;
+  width: 40%;
+  color:whitesmoke;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.Login{
+  display: flex;
+  // flex-direction: column;
+
+  justify-content: center;
+  // align-content: center;
+  // background-image: url('./board-pic-for-app.jpg');
+  // height: 80vh;
+  background-color: white;
+}
+
+.Forums{
+  background-color: white;
+  // display: flex;
+  // justify-content: center;
+  align-content: center;
+}
+
+
+
+
+// body{
+//   background-color: lightgray;
+// }

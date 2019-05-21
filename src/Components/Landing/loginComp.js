@@ -66,49 +66,58 @@ class LoginComp extends Component {
   render() {
     return (
       <>
-        {this.state.loginUsername ?
+        {/* {this.state.loginUsername ?
           <div>
             <h1>Welcome, {this.state.loginUsername.username}</h1>
           </div> : this.state.view === 'login'
-        }
-        < h1 > Login</h1>
-        < form onSubmit={this.handleLoginSubmit}>
-          <input
-            type='text'
-            name='loginUsername'
-            placeholder='username'
-            value={this.state.loginUsername}
-            onChange={this.handleFormInputUpdate}
-          />
-          <input
-            type='text'
-            name='loginPassword'
-            placeholder='password'
-            value={this.state.loginPassword}
-            onChange={this.handleFormInputUpdate}
-          />
-          <button>Login</button>
-        </form>
-        <button onClick={this.handleRegistration}>Register</button>
-        {/* < h1 > Register </h1>
-        < form onSubmit={this.handleLoginSubmit}>
-          <input
-            type='text'
-            name='loginUsername'
-            placeholder='username'
-            value={this.state.loginUsername}
-            onChange={this.handleFormInputUpdate}
-          />
-          <input
-            type='text'
-            name='loginPassword'
-            placeholder='password'
-            value={this.state.loginPassword}
-            onChange={this.handleFormInputUpdate}
-          />
-        </form> */}
+        } */}
+        <div className='Login'>
 
-        {this.state.loginError && <h3>{this.state.loginErrorMessage}</h3>}
+          <div>
+            <span>
+
+              < h1 >  Please Login or Register Here</h1>
+            </span>
+
+            < form onSubmit={this.handleLoginSubmit}>
+              <input
+                type='text'
+                name='loginUsername'
+                placeholder='username'
+                value={this.state.loginUsername}
+                onChange={this.handleFormInputUpdate}
+              />
+              <input
+                type='text'
+                name='loginPassword'
+                placeholder='password'
+                value={this.state.loginPassword}
+                onChange={this.handleFormInputUpdate}
+              />
+              <button>Login</button>
+              <button onClick={this.handleRegistration}>Register</button>
+            </form>
+          </div>
+          {/* < h1 > Register </h1>
+        < form onSubmit={this.handleLoginSubmit}>
+        <input
+        type='text'
+            name='loginUsername'
+            placeholder='username'
+            value={this.state.loginUsername}
+            onChange={this.handleFormInputUpdate}
+            />
+            <input
+            type='text'
+            name='loginPassword'
+            placeholder='password'
+            value={this.state.loginPassword}
+            onChange={this.handleFormInputUpdate}
+            />
+          </form> */}
+
+          {this.state.loginError && <h3>{this.state.loginErrorMessage}</h3>}
+        </div>
       </>
     )
   }

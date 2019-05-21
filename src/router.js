@@ -7,6 +7,7 @@ import Profile from './Components/profile/profile';
 import Contact from './Components/NavComponents/contact'
 import About from './Components/NavComponents/about'
 import ForumsMain from './Components/forumsComponents/forumManagement/forumMain'
+import ForumTopicComp from './Components/forumsComponents/forumTopicComp';
 
 
 export default (
@@ -19,7 +20,7 @@ export default (
         <LoginComp />
       )}
     />
-    <Route path='/forums' component={ForumsMain} />
+    <Route path='/forums' component={ForumTopicComp} />
     <Route path={`/profile/:id`}
       component={Profile} />
   </Switch>

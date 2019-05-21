@@ -32,6 +32,7 @@ massive(CONNECTION_STRING).then((database) => {
 app.get('/api/users', ctrl.getUsers)
 app.post('/auth/register', ctrl.register)
 app.post('/auth/login', ctrl.login)
+app.get(`/auth/logout`, ctrl.logout)
 
 // profile controllers
 app.get(`/profile/:id`, pctrl.profile)
@@ -41,6 +42,13 @@ app.put(`/profile/:id`, pctrl.updateProfileInfo)
 // forum controllers
 app.get(`/forums/:id`, fctrl.forumGetAllThreads)
 app.post(`/forums/:id`, fctrl.forumCreateThread)
+app.put(`/forums/:id`, fctrl.forumUpdateThreadComment)
+app.delete(`/forums/:id`, fctrl.forumDeleteThreadComment)
+// app.get(`/forums/:id`, (req, res) => {
+//   res.send(req.body)
+// })
 
 
+
+// use redux to save information of sessions
 

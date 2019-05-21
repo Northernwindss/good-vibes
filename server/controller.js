@@ -55,5 +55,17 @@ module.exports = {
       console.log(err)
       res.sendStatus(401)
     }
+
   },
+  logout: (req, res) => {
+    const db = req.app.get(`db`)
+    console.log(123456789, req.session.user, req.session)
+    const { session } = req
+    const { username } = session.user
+    db.login({ username })
+    // session.user = user[0]
+    console.log(`logout @ ctrl`, req)
+    req.session.destroy()
+    res.sendStatus(200)
+  }
 }

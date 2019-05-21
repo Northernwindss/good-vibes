@@ -23,6 +23,8 @@ module.exports = {
       res.status(200).send(response)
     })
   },
+
+
   // deleteProfileInfo: (req, res) => {
   //   console.log('delete working on pctrl')
   //   const db = req.app.get(`db`)
