@@ -1,3 +1,12 @@
+SCSS SYNTAX
+// _reset.scss
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
 // .NabBar{
 //   background-color: grey
 // }
@@ -41,6 +50,61 @@
   align-content: center;
 }
 
+.hamburgermenu, .dropdown {
+  display: none;
+}
+
+.hamburgermenu img {
+  height: 7vh;
+}
+
+
+
+@media (max-width: 990px){
+  .Nav-Links{
+      display: none;
+  }
+
+  .hamburgermenu {
+      width: 90px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      padding-right: 1vw;
+      align-items: center;
+      background: darkgrey;
+      border-radius: 5px;
+      margin-right: 1vw;
+      
+  }
+
+  .menutext {
+      font-family: 'Open Sans', sans-serif;
+      margin-right: 1vw;
+      margin-left:  1vw;
+  }
+
+  .hamburgermenu img {
+      height: 7vh;
+  }
+
+
+}
+
+
+// @media (max-width: 770px){
+//   .hero {
+//       height: 50vh;
+//       background-size: cover;
+//   }
+
+//   .greeting1 {
+//       font-size: 1.6em;
+//   }
+
+//   .greeting2 {
+//       font-size: 3.5em;
+//   }
 
 
 

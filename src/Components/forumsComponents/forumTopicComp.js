@@ -39,7 +39,7 @@ class ForumTopicComp extends Component {
           <nav>
             {/* <Link to='/forums/best-starburst-flavor'>Best Starbust Flavor</Link>
           <Link to='/forums/best-travel-destinations'>Best Travel Destinations</Link> */}
-            <Link to='/forums/DevMountain-is-awesome'>DevMountain is Awesome!</Link>
+            <Link to='/forums/DevMountain-is-awesome'>Favorite things about DevMountain!!</Link>
 
             <Switch>
               {/* <Route
